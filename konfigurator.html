@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="konfigurator.js" defer></script>
+    <title>Configurator</title>
+</head>
+<body>
+<div class="version">
+    <header>
+        <div class="banner">
+            <img src="img/Volvo-C30-33_2.jpg">
+            <h1 class="banner-text">Configure your C30</h1>
+            <nav>    
+                <div class="topnav">
+                    <a href="wersje.html"><b>Versions</b></a>
+                
+                    <div class="topnav-centered">
+                        <a href="index.html"><b>Home</b></a>
+                    </div>
+                    <div class="topnav-right">
+                        <a href="galeria.html"><b>Gallery</b></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+    <div class="configg">
+    <div class="controls">
+        <div class="field">
+            <label for="engine">Engine</label>
+            <select id="engine">
+            <optgroup label="Petrol">
+                <option value="T2">T2 - 100 hp</option>
+                <option value="T3">T3 - 150 hp</option>
+                <option value="T4">T4 - 180 hp</option>
+                <option value="T5">T5 - 230 hp</option>
+            </optgroup>
+            <optgroup label="Diesel">
+                <option value="D2">D2 - 115 hp</option>
+                <option value="D3">D3 - 150 hp</option>
+                <option value="D4">D4 - 177 hp</option>
+                <option value="D5">D5 - 180 hp</option>
+            </optgroup>
+            <optgroup label="Electric">
+                <option value="EV">C30 Electric</option>
+            </optgroup>
+            </select>
+        </div>
+
+    <fieldset>
+        <legend>Gearbox</legend>
+        <label><input type="radio" name="gearbox" value="manual" checked> Manual</label>
+        <label><input type="radio" name="gearbox" value="automatic"> Automatic</label>
+    </fieldset>
+    </div>
+
+    <aside>
+    <h2>Your C30</h2>
+    <dl>
+        <dt>Fuel</dt>     <dd id="sum-fuel"></dd>
+        <dt>Size</dt>     <dd id="sum-capacity"></dd>
+        <dt>Power</dt>    <dd id="sum-power"></dd>
+        <dt>Gearbox</dt>  <dd id="sum-gearbox"></dd>
+    </dl>
+    </aside>
+
+    <main class="contact-container">
+        <h2>Inquire About Your Configuration</h2>
+        <p style="color: var(--muted); margin-top: -1rem; margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Configured your dream C30? Let us know what you need. We'll get back to you with a quote or to arrange the details.
+        </p>
+
+        <form action="#" method="POST" class="contact-form">
+            
+            <div class="form-group">
+                <label for="email">Your Email Address: </label>
+                <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required>
+            </div>
+
+            <!-- 2. Subject Select (At least 3 options) -->
+            <div class="form-group">
+                <label for="subject">Purpose of Inquiry: </label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a reason...</option>
+                    <option value="quote">Request a quote for this configuration</option>
+                    <option value="purchase">Proceed with purchase / order</option>
+                    <option value="test-drive">Book a test drive</option>
+                    <option value="other">Other questions</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="5" 
+                    placeholder="Let us know your preferred contact time, or if you have any specific questions about the car..." 
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Inquiry</button>
+            
+        </form>
+    </main>
+    </div>
+
+    <br>
+    <footer>
+        © 2026 Daniil Ksianzov
+    </footer>
+</div>
+</body>
+</html>
