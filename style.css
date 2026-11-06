@@ -6,6 +6,18 @@ body {
 
 /* * { outline: 1px solid red; } */
 
+:root {
+    --bg: #000000;
+    --surface: #111111;
+    --text: #ffffff;
+    --muted: #a1a1aa;
+    --line: #333333;
+    --accent: #5b8cff;
+    --accent-soft: rgba(91, 140, 255, 0.15);
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
 a {
     color:inherit;
     font-size: 18px;
@@ -13,47 +25,50 @@ a {
 }
 
 .banner {
-  position: relative;
-  min-height: clamp(220px, 34vw, 380px);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+    position: relative;
+    min-height: clamp(220px, 34vw, 380px);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
+
 .banner img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
-  z-index: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    z-index: 0;
 }
+
 .banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top,
-    rgba(6,10,18,.85) 0%, rgba(6,10,18,.30) 45%, rgba(6,10,18,.55) 100%);
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top,
+      rgba(6,10,18,.85) 0%, rgba(6,10,18,.30) 45%, rgba(6,10,18,.55) 100%);
 }
+
 .banner-text {
-  position: absolute;
-  left: clamp(1rem, 3vw, 2.25rem);
-  bottom: clamp(1rem, 3vw, 2.25rem);
-  z-index: 2;
-  margin: 0;
-  color: #ffffff;
-  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
-  font-weight: 650;
-  line-height: 1.1;
-  letter-spacing: -.02em;
+    position: absolute;
+    left: clamp(1rem, 3vw, 2.25rem);
+    bottom: clamp(1rem, 3vw, 2.25rem);
+    z-index: 2;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -.02em;
 }
 
 .banner nav {
-  position: absolute;
-  inset: 0 0 auto 0;
-  z-index: 2;
-  padding: clamp(.7rem, 2vw, 1rem) clamp(1rem, 3vw, 2.25rem);
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 2;
+    padding: clamp(.7rem, 2vw, 1rem) clamp(1rem, 3vw, 2.25rem);
 }
 
 .topnav {
@@ -74,11 +89,11 @@ a {
 }
 
 .topnav a:hover {
-    color: rgb(164, 164, 164);
+      color: rgb(164, 164, 164);
 }
 
 .topnav a.active {
-    color: white;
+      color: white;
 }
 
 .topnav-centered a {
@@ -90,7 +105,7 @@ a {
 }
 
 .topnav-right {
-    float: right;
+      float: right;
 }
 
 @media screen and (max-width: 600px) {
@@ -113,8 +128,8 @@ a {
 }
 
 .versions {
-    padding-left: 10%;
-    padding-right: 2%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 footer {
@@ -122,161 +137,207 @@ footer {
 }
 
 .gallery-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 2rem;
 }
- 
+  
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  grid-auto-flow: dense;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    grid-auto-flow: dense;
 }
- 
+  
 .gallery figure {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  background: #111;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: #111;
 }
- 
+  
 .gallery img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
- 
+  
 .gallery figure:hover img {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
- 
+  
 .gallery figcaption {
-  padding: 0.6rem 0.8rem;
-  font-size: 0.9rem;
-  color: #bbb;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    color: #bbb;
 }
- 
+  
 @media (min-width: 700px) {
-  .gallery .featured {
-    grid-column: span 2;
-    grid-row: span 2;
-    min-height: 320px;
-  }
- 
-  .gallery .featured img {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    aspect-ratio: auto;
-  }
- 
-  .gallery .featured figcaption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2rem 1rem 0.8rem;
-    font-size: 1rem;
-    color: #eee;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-  }
+    .gallery .featured {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 320px;
+    }
+  
+    .gallery .featured img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        aspect-ratio: auto;
+    }
+  
+    .gallery .featured figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2rem 1rem 0.8rem;
+        font-size: 1rem;
+        color: #eee;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    }
 }
- 
+  
 .credits {
-  margin-top: 2.5rem;
-  font-size: 0.85rem;
-  color: #999;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: #999;
 }
- 
+  
 .credits ul {
-  padding-left: 1.2rem;
+    padding-left: 1.2rem;
 }
 
 .version {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: 2rem;
-  align-items: start;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 2rem;
+    align-items: start;
 }
+.version > main,
 .version > header,
 .version > footer { grid-column: 1 / -1; }
 
-.configg {
-  margin: 5%;
-}
-
 .controls {
-  display: grid;
-  gap: 1.25rem;
-  align-content: start;
+    display: grid;
+    gap: 1.25rem;
+    align-content: start;
 }
 
 aside {
-  position: sticky;
-  top: 1.5rem;
-  grid-column: 2;
-  padding: 1.25rem 1.35rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+    position: sticky;
+    top: 1.5rem;
+    grid-column: 2;
+    padding: 1.25rem 1.35rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 aside h2 {
-  margin: 0 0 .9rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--muted);
+    margin: 0 0 .9rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: baseline;
-  gap: 1rem 1rem;
-  margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 1rem 1rem;
+    margin: 0;
 }
 dt { color: var(--muted); font-size: .9rem; }
 dd {
-  margin: 0;
-  text-align: right;
-  font-weight: 650;
-  font-variant-numeric: tabular-nums;
+    margin: 0;
+    text-align: right;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%;
-  font: inherit;
-  color: #ffffff; 
-  background: #111111;
-  border: 1px solid #333333;
-  border-radius: 12px;
-  padding: 0.85rem 1rem;
-  box-sizing: border-box;
+    width: 100%;
+    font: inherit;
+    color: #ffffff; 
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    box-sizing: border-box;
 }
 
 .form-group select option {
-  background-color: #111111;
-  color: #ffffff;
+    background-color: #111111;
+    color: #ffffff;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #666666;
+    color: #666666;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  outline: none;
-  background: #1a1a1a;
-  border-color: #5b8cff;
-  box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.15);
+    outline: none;
+    background: #1a1a1a;
+    border-color: #5b8cff;
+    box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.15);
+}
+
+.contact-container {
+    grid-column: 1 / -1; /* Spans the full width below the config and aside */
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    margin-top: 1rem;
+}
+
+.contact-container h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--muted);
+}
+
+.submit-btn {
+    font: inherit;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: #1a1a1a;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
 }
